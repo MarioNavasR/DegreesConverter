@@ -264,32 +264,109 @@ def setNums():
 def on_a_pressed():
     global Celsius, Fahrenheit
     if Thermo.overlaps_with(Button11):
-        Celsius += -1
-        Fahrenheit += -2
+        Celsius += 0
+        Fahrenheit += 0
         destroyTexts()
         setTexts()
     elif Thermo.overlaps_with(Button0):
-        pass
+        if CelsiustoFahrenheit:
+            Celsius += 0
+            Fahrenheit += 0
+        else:
+            Fahrenheit += 0
+            Celsius += 0
+        destroyTexts()
+        setTexts()
     elif Thermo.overlaps_with(Button1):
-        pass
+        if CelsiustoFahrenheit:
+            Celsius += 0
+            Fahrenheit += 0
+        else:
+            Fahrenheit += 0
+            Celsius += 0
+        destroyTexts()
+        setTexts()
     elif Thermo.overlaps_with(Button2):
-        pass
+        if CelsiustoFahrenheit:
+            Celsius += 0
+            Fahrenheit += 0
+        else:
+            Fahrenheit += 0
+            Celsius += 0
+        destroyTexts()
+        setTexts()
     elif Thermo.overlaps_with(Button3):
-        pass
+        if CelsiustoFahrenheit:
+            Celsius += 0
+            Fahrenheit += 0
+        else:
+            Fahrenheit += 0
+            Celsius += 0
+        destroyTexts()
+        setTexts()
     elif Thermo.overlaps_with(Button4):
-        pass
+        if CelsiustoFahrenheit:
+            Celsius += 0
+            Fahrenheit += 0
+        else:
+            Fahrenheit += 0
+            Celsius += 0
+        destroyTexts()
+        setTexts()
     elif Thermo.overlaps_with(Button5):
-        pass
+        if CelsiustoFahrenheit:
+            Celsius += 0
+            Fahrenheit += 0
+        else:
+            Fahrenheit += 0
+            Celsius += 0
+        destroyTexts()
+        setTexts()
     elif Thermo.overlaps_with(Button6):
-        pass
+        if CelsiustoFahrenheit:
+            Celsius += 0
+            Fahrenheit += 0
+        else:
+            Fahrenheit += 0
+            Celsius += 0
+        destroyTexts()
+        setTexts()
     elif Thermo.overlaps_with(Button7):
-        pass
+        if CelsiustoFahrenheit:
+            Celsius += 0
+            Fahrenheit += 0
+        else:
+            Fahrenheit += 0
+            Celsius += 0
+        destroyTexts()
+        setTexts()
     elif Thermo.overlaps_with(Button8):
-        pass
+        if CelsiustoFahrenheit:
+            Celsius += 0
+            Fahrenheit += 0
+        else:
+            Fahrenheit += 0
+            Celsius += 0
+        destroyTexts()
+        setTexts()
     elif Thermo.overlaps_with(Button9):
-        pass
+        if CelsiustoFahrenheit:
+            Celsius += 0
+            Fahrenheit += 0
+        else:
+            Fahrenheit += 0
+            Celsius += 0
+        destroyTexts()
+        setTexts()
     elif Thermo.overlaps_with(ButtonDelete):
-        pass
+        if CelsiustoFahrenheit:
+            Celsius += 0
+            Fahrenheit += 0
+        else:
+            Fahrenheit += 0
+            Celsius += 0
+        destroyTexts()
+        setTexts()
 controller.A.on_event(ControllerButtonEvent.PRESSED, on_a_pressed)
 
 def destroyTexts():
@@ -370,3 +447,13 @@ setNums()
 def on_forever():
     pass
 forever(on_forever)
+
+def CelsiusFahrenheit():
+    global Temperature
+    Temperature = game.ask_for_number("Celsius", 6) * (9 / 5) + 32
+    Temperature = Math.round_with_precision(Temperature, 2)
+def FahrenheitCelsius():
+    global Temperature
+    Temperature = (game.ask_for_number("Fahrenheit", 6) - 32) * (5 / 9)
+    Temperature = Math.round_with_precision(Temperature, 2)
+Temperature = 0

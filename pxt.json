@@ -1,5 +1,5 @@
 {
-    "name": "DegreesConverter2",
+    "name": "DegreesConverter",
     "description": "",
     "dependencies": {
         "device": "*",

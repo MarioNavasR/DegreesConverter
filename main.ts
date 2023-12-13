@@ -253,30 +253,44 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         destroyTexts()
         setTexts()
     } else if (Thermo.overlapsWith(Button0)) {
-        Celsius += 0
-        Fahrenheit += 0
+    	
+    } else if (Thermo.overlapsWith(Button1)) {
         destroyTexts()
         setTexts()
-    } else if (Thermo.overlapsWith(Button1)) {
-    	
     } else if (Thermo.overlapsWith(Button2)) {
-    	
+        if (CelsiustoFahrenheit) {
+            Celsius = 0
+            CelsiusFahrenheit(1)
+        } else {
+            Fahrenheit = 0
+            FahrenheitCelsius(1)
+        }
+        destroyTexts()
+        setTexts()
     } else if (Thermo.overlapsWith(Button3)) {
-    	
+        destroyTexts()
+        setTexts()
     } else if (Thermo.overlapsWith(Button4)) {
-    	
+        destroyTexts()
+        setTexts()
     } else if (Thermo.overlapsWith(Button5)) {
-    	
+        destroyTexts()
+        setTexts()
     } else if (Thermo.overlapsWith(Button6)) {
-    	
+        destroyTexts()
+        setTexts()
     } else if (Thermo.overlapsWith(Button7)) {
-    	
+        destroyTexts()
+        setTexts()
     } else if (Thermo.overlapsWith(Button8)) {
-    	
+        destroyTexts()
+        setTexts()
     } else if (Thermo.overlapsWith(Button9)) {
-    	
+        destroyTexts()
+        setTexts()
     } else if (Thermo.overlapsWith(ButtonDelete)) {
-    	
+        destroyTexts()
+        setTexts()
     }
 })
 function destroyTexts () {
@@ -288,6 +302,16 @@ function destroyTexts () {
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Button, function (sprite, otherSprite) {
     otherSprite.startEffect(effects.bubbles, 50)
 })
+function CelsiusFahrenheit (celsius: number) {
+    Celsius = celsius + (10 - 0)
+    Fahrenheit = celsius * (9 / 5) + 32
+    Temperature = Math.roundWithPrecision(Temperature, 2)
+}
+function FahrenheitCelsius (fahrenheit: number) {
+    Fahrenheit = fahrenheit + (10 - 0)
+    Celsius = (fahrenheit - 32) * (5 / 9)
+    Temperature = Math.roundWithPrecision(Temperature, 2)
+}
 function setTexts () {
     if (CelsiustoFahrenheit) {
         FahrenheitText = textsprite.create("Fahrenheit", 0, 1)
@@ -329,6 +353,7 @@ let CelsiusNumberText: TextSprite = null
 let CelsiusText: TextSprite = null
 let CelsiustoFahrenheit = false
 let Thermo: Sprite = null
+let Temperature = 0
 scene.setBackgroundColor(7)
 Thermo = sprites.create(img`
     . . . . . . . . . . . . . . . . 
